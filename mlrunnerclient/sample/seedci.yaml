@@ -1,0 +1,18 @@
+version: 2
+server_platform: google
+
+platform_config:
+  google_api: asd
+
+initialize:
+  - pip3 install torch torchvision
+
+workflows:
+    -
+      name: "train"
+      file: train
+      function: doTrain
+      metrics:
+        - accuracy
+        - loss
+        - recall
